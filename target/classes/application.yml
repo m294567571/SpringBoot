@@ -1,0 +1,68 @@
+#����Ĭ��ͼ��,ֻ�оɰ汾����
+#spring:
+#  mvc:
+#    favicon:
+#      enabled: false
+
+#thymeleaf start
+#spring:
+#  thymeleaf:
+#    #�رջ���,����ʱ�ر�,��Ŀ������,��Ϊ����ʱ��鿴ʵʱҳ��
+#    cache: false
+#    #�����ַ���
+#    encoding: utf-8
+#    #������ҳ����
+#    mode: HTML5
+#    servlet:
+#      content-type: text/html
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&character=utf-8
+#    username: root
+#    password: root
+#    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      #���ü��ͳ�����ص�filters,stat:���ͳ��,log4j:��־��¼,wall:����sqlע��
+#      filters: stat,wall,log4j
+#      maxActive: 20
+#      initialSize: 1
+#      maxWait: 60000
+#      minIdle: 1
+#      timeBetweenEvictionRunsMillis: 60000
+#      minEvictableIdleTimeMillis: 300000
+#      validationQuery: select 'x'
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: true
+#      maxOpenPreparedStatements: 20
+#      useGlobalDataSourceStat: true
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   ���ü��ͳ�����ص�filters��ȥ�����ؽ���sql�޷�ͳ�ƣ�'wall'���ڷ���ǽ
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#����mybatis
+mybatis:
+  type-aliases-package: com.mao.entity
+  mapper-locations: classpath:mapper/*.xml

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--注意：引入thymeleaf的名称空间,就能用themeleaf的相关规则-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<!--所有的html元素都能被thymeleaf接管,替换方法:th:元素名
+Variable Expressions: ${...} 对象
+Selection Variable Expressions: *{...} 选择变量
+Message Expressions: #{...} 文本
+Link URL Expressions: @{...} url
+-->
+<h1 th:text="${msg}"></h1>
+<!--可以使用th:中的很多方法规则-->
+<h1 th:each="user:${users}" th:text="${user}"></h1>
+<!--也可以写成这种格式,两个中括号会自动把th元素放进来-->
+<h1 th:each="user:${users}">[[${user}]]</h1>
+</body>
+</html>

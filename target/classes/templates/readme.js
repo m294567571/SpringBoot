@@ -1,0 +1,2 @@
+hello1
+tempelates目录下的所有文件,只能通过controller去访问

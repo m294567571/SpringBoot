@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mao.mapper.UserMapper">
+
+<!-- 这个标签可以开启缓存   <cache></cache> ,然后在标签内加上useCache="true"-->
+    <select id="listUser" resultType="User">
+        SELECT * FROM user
+    </select>
+</mapper>
